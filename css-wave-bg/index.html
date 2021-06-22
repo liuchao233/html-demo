@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>wave-bg</title>
+    <style>
+      body {
+        position: relative;
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        /* 模拟海浪颜色，然后容两个不同的圆遮挡住大部分，留下底部 */
+        background-color: rgba(118, 218, 255);
+      }
+
+      /* 两个圆，高低有偏差模拟两个浪纹 */
+      body::before, body::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        /* rotateZ 绕Z轴旋转，不会发生变形 */
+        transform: translate(-50%, 0) rotateZ(0);
+        /* 尽量大一点，防止顶部被看到 */
+        min-width: 300vw;
+        min-height: 300vw;
+        /* 设置成 45% 是为了让圆旋转起来有波浪起落效果 */
+        border-radius: 45%;
+        background-color: #fff;
+        /* 两个圆要偏低一点 */
+        bottom: 15vh;
+        animation: rotate 10s linear infinite;
+      }
+
+      body::after {
+        bottom: 12vh;
+        opacity: .5;
+        /* 模拟两层波浪起伏 */
+        border-radius: 47%;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, 0) rotateZ(0deg);
+        }
+
+        50% {
+          /* 设置y高度偏差来模拟大海的起伏 */
+          transform: translate(-50%, 2%) rotateZ(180deg);
+        }
+
+        100% {
+          transform: translate(-50%, 0) rotateZ(360deg);
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+  </body>
+</html>
