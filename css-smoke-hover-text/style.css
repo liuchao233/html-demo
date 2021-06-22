@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  max-width: 800px;
+  font-size: 20px;
+  line-height: 1.5;
+  user-select: none;
+}
+
+.text span {
+  display: inline-block;
+}
+
+.text span.active {
+  animation: smoke 4s linear forwards;
+}
+
+@keyframes smoke {
+  0% {
+    opacity: 1;
+    filter: blur(0); 
+    /* 不加 transform 就是简单的文字隐藏效果 */
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+  }
+
+  /* 这里设为100% 来去掉再次显示的过程 */
+  30%{
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateX(300px) translateY(-300px) rotate(720deg) scale(4);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+  }
+}
