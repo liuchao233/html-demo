@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.shell {
+  height: 100vh;
+  overflow-x: hidden;
+  /* perspective指定了观察者与 z=0 平面的距离，使具有三维位置变换的元素产生透视效果 */
+  /* z>0 的三维元素比正常大，而 z<0 时则比正常小，大小程度由该属性的值决定 */
+  /* 在外层添加透视的效果 */
+  /* 使用 3d 透视效果，对于有不同大小的 translateZ 属性的元素，由于近大远小， 在3d效果下滚动的速度不同，从而产生视差滚动效果 */
+  /* translateZ(1) > translateZ(0)[正常] > translateZ(-1) */
+  perspective: 3px;
+}
+
+.shell div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.image {
+  /* translateZ 设置 z 轴上移动的距离 */
+  /* scale(1.6) 设置图片的缩放，但是多个缩放图片堆叠会导致上层的图片尺寸减小，还不清楚为什么 */
+
+  /* scale 改变的不是元素的高度，而是 X轴和 Y轴的刻度 */
+  transform: translateZ(-1px) scale(1.6);
+  background-size: cover;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* 这个东西是正常滚动的，顺便隔离两个设置 scale 的图片，防止图片折叠 */
+.text {
+  height: 50vh;
+  background-color: #fff;
+}
+
+.text h1 {
+  color: #000;
+}
+
+.heading {
+  z-index: -1;
+  transform: translateY(-30vh) translateZ(1px);
+  color: #fff;
+  font-size: 30px;
+}
