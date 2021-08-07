@@ -40,6 +40,10 @@ html, body {
 
 .gray {
   /* linear-gradient 可以设置百分比或固定尺寸 */
+  /* transparent 0, 是因为 0 < 1px 所以浏览器会把它改写为 1px。即1px的 #eee 后无渐变，直接变为透明 */
+ 
+  /* 关于角度，默认是 180deg, 0deg == to top, 记为向上。角度顺时针旋转，所以 45deg = 右上 -45deg = 左上 135deg = 右下 */
+ 
   background-image: 
     linear-gradient(90deg, #eee 1px, transparent 0),
     linear-gradient(#efefef 1px, transparent 0);
