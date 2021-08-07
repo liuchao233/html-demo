@@ -1,0 +1,71 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, silver, black)
+}
+
+.radar {
+  width: calc(8em + 1.5em);
+  height: calc(8em + 1.5em);
+  background:
+    /* 横向的分割线 */
+    linear-gradient(
+      transparent 49.75%,
+      darkgreen 49.75%,
+      darkgreen 50.25%,
+      transparent 50.25%
+    ),
+    /* 纵向的分割线 */
+    linear-gradient(
+      90deg,
+      transparent 49.75%,
+      darkgreen 49.75%,
+      darkgreen 50.25%,
+      transparent 50.25%
+    ),
+    /* repeating-radial-gradient 创造出雷达环的效果 */
+    repeating-radial-gradient(
+      transparent 0,
+      transparent 0.95em,
+      darkgreen 0.95em,
+      darkgreen 1em
+    ),
+    linear-gradient(black, black);
+  font-size: 40px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.radar::before {
+  content: '';
+  position: absolute;
+  width: calc(8em / 2);
+  height: calc(8em / 2);
+  /* border: 1px solid white; */
+  border-right: 2px solid rgba(0, 192, 0, 1);
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 192, 0, 1) 100%
+  );
+  /* 都忘了 border radius 100% 是个1/4圆了 */
+  border-radius: 100% 0 0 0;
+  top: calc(1.5em / 2);
+  left: calc(1.5em / 2);
+  animation: scanning 5s linear infinite;
+  /* 设置锚点为右下角 */
+  transform-origin: 100% 100%;
+}
+
+@keyframes scanning {
+  to {
+    transform: rotate(360deg);
+  }
+}
