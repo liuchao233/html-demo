@@ -1,0 +1,117 @@
+:root {
+  --mainColor: #e3ebf6;
+  --mainColor1: #edf0f3;
+  --mainColor2: #f3f0f3;
+  --white: #ffffff99;
+  --greyDark: #9baacf;
+  --greyDark2: #ccd1dd;
+  --greyDark3: #c9d1e6;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--mainColor);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 30rem;
+  height: 16rem;
+  /* 使用多个 box-shadow 叠加为 container 添加阴影效果 */
+  box-shadow: 
+    0.1rem 0.1rem 0.2rem var(--greyDark),
+    0.2rem 0.2rem 0.2rem var(--greyDark2),
+    0.3rem 0.3rem 0.2rem var(--greyDark3),
+    -0.1rem -0.1rem 0.1rem var(--mainColor1),
+    -0.2rem -0.2rem 0.1rem var(--mainColor2),
+    -0.3rem -0.3rem 0.6rem var(--white);
+  border-radius: 1.6rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.loudspeaker {
+  flex: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls {
+  flex: 4;
+  display: flex;
+  /* 配置 flex-wrap 让子元素可以自动换行 */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer {
+  width: 13rem;
+  height: 13rem;
+  box-shadow: 
+    0.1rem 0.1rem 0.2rem var(--greyDark),
+    0.2rem 0.2rem 0.2rem var(--greyDark2),
+    0.3rem 0.3rem 0.2rem var(--greyDark3),
+    -0.3rem -0.3rem 0.6rem var(--white)
+  ;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+  background-image: radial-gradient(#848793 20%, transparent 40%);
+  background-size: 0.5625rem 0.5625rem;
+  transform: rotate(45deg);
+
+  /* box-shadow: 
+    inset 0.625rem 0.625rem 1.25rem #00000026,
+    inset 0.25rem 0.25rem 1.25rem #ffffff99; */
+}
+
+/* 这里没感觉出再添加一个大一点的圆，然后再添加阴影有什么更好的效果 */
+.inner::before {
+  content: '';
+  display: block;
+  border-radius: 50%;
+  width: 11.125rem;
+  height: 11.125rem;
+  box-shadow: 
+    inset 0.625rem 0.625rem 1.25rem #00000026,
+    inset 0.25rem 0.25rem 1.25rem #ffffff99;
+}
+
+.minus,
+.plus,
+.microphone,
+.power {
+  /* 可以用 outline + background 查看元素尺寸，方便调试  */
+  /* outline: 1px dashed wheat; */
+  /* background-color: purple; */
+  width: 6.5rem;
+  text-align: center;
+}
+
+.fa {
+  font-size: 2.925rem;
+  color: var(--mainColor);
+  /* 使用文字阴影，为文本添加立体效果 */
+  text-shadow: 
+    0.1rem 0.1rem 0.1rem var(--greyDark),
+    0.2rem 0.2rem 0.1rem var(--greyDark2),
+    0.3rem 0.3rem 0.1rem var(--greyDark3),
+    -0.1rem -0.1rem 0.1rem var(--white);
+}

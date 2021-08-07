@@ -1,0 +1,77 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+header {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+
+  /* 设置默认进度为0.5 */
+  --percentage: 0.5;
+}
+
+header .view, header .tree {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img, header video {
+  position: absolute;
+  display: block;
+  /* 宽度调整，为了适配不同的宽度 */
+  width: 120%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 早上的背景和树的优先级调整为最高 */
+header .morning {
+  z-index: 20;
+  /* 运行到 50% 时，morning 变透明 */
+  opacity: calc(1 - (var(--percentage) - 0.25) / 0.25);
+}
+
+header .afternoon {
+  z-index: 10;
+  opacity: calc(1 - (var(--percentage) - 0.5) / 0.5);
+}
+
+header .view {
+  /* 背景图 移动的最大距离为 100px */
+  transform: translateX(calc(var(--percentage) * 100px));
+}
+
+header .tree {
+  /* 树 移动的最大距离为 50px */
+  transform: translateX(calc(var(--percentage) * 50px));
+  filter: blur(3px);
+}
+
+header .view,
+header .tree,
+header .morning,
+header .afternoon {
+  transition: .2s all ease-in;
+}
+
+/* 鼠标移动的时候，不许需要动画效果 */
+header.moving .view,
+header.moving .tree,
+header.moving .morning,
+header.moving .afternoon {
+  transition: none;
+}
+
+/* 只有在进度到达 0.9 后，窗上的霜冻效果才慢慢显示出来 */
+header .window-cover {
+  opacity: calc((var(--percentage) - 0.9)/0.1);
+}
