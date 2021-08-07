@@ -1,0 +1,265 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 5vh 32px 0;
+  box-sizing: border-box;
+  justify-content: space-around;
+}
+
+.left {
+  flex: 0 0 60%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.left > div {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+.left > div.active {
+  border-color: #348dfe;
+}
+
+.right {
+  flex: 0 0 30%;
+  border: 1px solid #eee;
+  height: 60vh;
+}
+
+.gray {
+  /* linear-gradient 可以设置百分比或固定尺寸 */
+  background-image: 
+    linear-gradient(90deg, #eee 1px, transparent 0),
+    linear-gradient(#efefef 1px, transparent 0);
+  /* 等分为4小格子 */
+  /* background-size: 25% 25%; */
+  /* 设置为固定尺寸 */
+  background-size: 30px 30px;
+  background-repeat: repeat;
+}
+
+.tian-box {
+  background-image: 
+    linear-gradient(90deg, #aaa 2px, transparent 0),
+    linear-gradient(#aaa 2px, transparent 0),
+    linear-gradient(90deg, #efefef 1px, transparent 0px),
+    linear-gradient( #efefef 1px, transparent 0px);
+    background-size: 60px 60px;
+    /* 使用多个 background-position 为线性渐变添加偏移量  */
+    background-position: 0 0, 0 0, 30px 0, 0 30px;
+    
+
+  /* 这个百分比是相对于父元素的百分比 */
+  /* background-size: 50% 50%;  */
+  /* 这个百分比是相当于 background-size 的百分比 */
+  /* background-position: 0 0, 0 0, 50% 0, 0 50%; */
+  background-repeat: repeat;
+}
+
+.col-line {
+  background: linear-gradient(90deg, #5f76eb 50%, transparent 0);
+  background-repeat: repeat;
+  background-size: 30px 30px;
+}
+
+.row-line {
+  background: linear-gradient(#5f76eb 50%, transparent 0);
+  background-repeat: repeat;
+  background-size: 30px 30px;
+}
+
+.blue {
+  background: 
+    linear-gradient(90deg, rgba(78,110,242,.7) 50%, transparent 0),
+    linear-gradient(rgba(78,110,242,.8) 50%, transparent 0);
+  background-repeat: repeat;
+  background-size: 30px 30px;
+}
+
+.grid {
+  background-image: 
+    /* 上面一组，正方型 */
+    linear-gradient(135deg, #515151 25%, transparent 0),
+    linear-gradient(-45deg, #515151 25%, transparent 0),
+    /* 下面一组，正方型 */
+    linear-gradient(135deg, #515151 25%, transparent 0),
+    linear-gradient(-45deg, #515151 25%, transparent 0);
+  background-repeat: repeat;
+  background-size: 64px 64px;
+  background-position: 0 0, -33px -32px, 32px 32px, -1px 0;
+}
+
+.grid-double {
+  background-image: 
+    /* 上面一组，正方型 */
+    linear-gradient(135deg, #515151 25%, transparent 0),
+    linear-gradient(-45deg, #515151 25%, transparent 0),
+    /* 下面一组，正方型 */
+    linear-gradient(135deg, #999 25%, transparent 0),
+    linear-gradient(-45deg, #999 25%, transparent 0);
+  background-repeat: repeat;
+  background-size: 64px 64px;
+  background-position: 0 0, -33px -32px, 32px 32px, -1px 0;
+}
+
+.line-rotate {
+  background: linear-gradient(45deg, #39b54a 25%, transparent 25%, transparent 50%, #39b54a 50%, #39b54a 75%, transparent 75%);
+  /* 可以使用 background size 调整大小，不用傻傻的画一堆了 */
+  background-size: 30px 30px;
+  background-repeat: repeat;
+}
+
+.line-rotate-left {
+  /* 这里可以使用 -45deg 或者 135deg，两者互补 */
+  background: linear-gradient(-45deg, #39b54a 25%, transparent 25%, transparent 50%, #39b54a 50%, #39b54a 75%, transparent 75%);
+  background-size: 30px 30px;
+  background-repeat: repeat;
+}
+
+/* 太强了，抄答案 */
+.line-rotate-left-right {
+  background-image: 
+    linear-gradient(135deg, #fbbd08 25%, transparent 0),
+    linear-gradient(45deg, #fbbd08 25%, transparent 0),
+    linear-gradient(-135deg, #fbbd08 25%, transparent 0),
+    linear-gradient(-45deg, #fbbd08 25%, transparent 0);
+  background-repeat: repeat;
+  background-size: 31px 31px;
+  background-position: 0 0, 0 31px, 31px 0, 31px 31px;
+}
+
+.xiaomai {
+  background: 
+    linear-gradient(135deg,#fbbd08 25%, transparent 0),
+    linear-gradient(45deg,#fbbd08 25%, transparent 0),
+    linear-gradient(-135deg,#fbbd08 25%,transparent 0),
+    linear-gradient(-45deg,#fbbd08 25%,transparent 0);
+  background-position: 0 0,0 20px,20px 0,9px 9px;
+  background-size: 20px 20px;
+  background-repeat: repeat;
+}
+
+.bianzi {
+  background: 
+    linear-gradient(-45deg,#8dc63f 25%,transparent 0),
+    linear-gradient(45deg,#8dc63f 25%,transparent 0);
+  background-position: 0 0,20px 0;
+  background-size: 40px 20px;
+  background-repeat: repeat;
+}
+
+.circle {
+  background-image: 
+    radial-gradient(#5f76eb 20%,transparent 0),
+    radial-gradient(#5f76eb 20%,transparent 0);
+    background-size: 32px 32px;
+    /* 添加偏移，丰富点的密集程度 */
+    background-position: 0 0, 16px 16px;
+    background-repeat: repeat;
+}
+
+.point {
+  /* 使用1px的圆 */
+  background-image: radial-gradient(#000 1px,transparent 0);
+    background-size: 22px 22px;
+    background-repeat: repeat;
+}
+
+.hollow-circle {
+  --pink: #1cbbb381;
+  background-image: radial-gradient(transparent 20%,var(--pink) 20%,var(--pink) 40%,transparent 40%,transparent 60%,var(--pink) 60%,var(--pink) 80%,transparent 80%);
+  background-size: 50px 50px;
+  background-repeat: repeat;
+}
+
+.react-box {
+  background-image: linear-gradient(155deg
+  ,#f37b1d 25%,transparent 0),linear-gradient(
+-25deg
+,#f37b1d 25%,transparent 0),linear-gradient(
+155deg
+,#f37b1d 25%,transparent 0),linear-gradient(
+-25deg
+,#f37b1d 25%,transparent 0);
+    background-size: 64px 32px;
+    background-position: 0 0,-32px -16px,32px 16px,0 0;
+    background-repeat: repeat;
+}
+
+.hahaha {
+  background: linear-gradient(
+135deg
+,#fbbd08 25%,transparent 0),linear-gradient(
+45deg
+,#fbbd08 25%,transparent 0),linear-gradient(
+-135deg
+,#fbbd08 25%,transparent 0),linear-gradient(
+-45deg
+,#fbbd08 25%,transparent 0);
+  background-position: 0 0,0 10px,31px 0,31px 31px;
+  background-size: 31px 31px;
+  background-repeat: repeat;
+}
+
+.hahaha2 {
+  background: linear-gradient(
+135deg
+,#5f76eb 25%,transparent 0),linear-gradient(
+45deg
+,#5f76eb 25%,transparent 0),linear-gradient(
+-135deg
+,#5f76eb 25%,transparent 0),linear-gradient(
+-45deg
+,#5f76eb 25%,transparent 0);
+    background-position: 0 0,0 10px,10px 0,50px 31px;
+    background-size: 31px 31px;
+    background-repeat: repeat;
+}
+
+.hahaha3 {
+  background: linear-gradient(
+135deg
+,#5f76eb 25%,transparent 0),linear-gradient(
+45deg
+,#5f76eb 25%,transparent 0),linear-gradient(
+-135deg
+,#5f76eb 25%,transparent 0),linear-gradient(
+-45deg
+,#5f76eb 25%,transparent 0);
+    background-position: 0 0,0 10px,20px 10px,10px 32px;
+    background-size: 40px 40px;
+    background-repeat: repeat;
+}
+
+.hahaha4 {
+  background: linear-gradient(
+    135deg
+    ,#5f76eb 25%,transparent 0),linear-gradient(
+    45deg
+    ,#5f76eb 25%,transparent 0),linear-gradient(
+    -135deg
+    ,#5f76eb 25%,transparent 0),linear-gradient(
+    -45deg
+    ,#5f76eb 25%,transparent 0);
+        background-position: 0 40px,0 20px,40px 6px,0 60px;
+        background-size: 60px 60px;
+        background-repeat: repeat;
+}
+
+.image {
+  background-image: url(images/avatar.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
