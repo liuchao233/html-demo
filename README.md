@@ -13,3 +13,4 @@
 * css-smoke-text 文字烟雾效果（需要视频支持）
 * css-video-in-text 在文字中看视频（ie不支持）
 * css-wave-bg 波浪效果
+* home-page 响应式网站首页
