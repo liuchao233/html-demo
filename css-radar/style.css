@@ -55,7 +55,7 @@ body {
     rgba(0, 0, 0, 0) 50%,
     rgba(0, 192, 0, 1) 100%
   );
-  /* 都忘了 border radius 100% 是个1/4圆了 */
+  /* 都忘了 border-radius 100% 是个1/4圆了 */
   border-radius: 100% 0 0 0;
   top: calc(1.5em / 2);
   left: calc(1.5em / 2);

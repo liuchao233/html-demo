@@ -1,0 +1,78 @@
+/* https://9elements.github.io/fancy-border-radius/ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #edeeed;
+}
+
+.drops {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.drop {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  /* border-radius: 1-4 length|% / 1-4 length|%; */
+  /* "/"前面的4个数值表示圆角的水平半径，后面4个值表示圆角的垂直半径 */
+  /* border-radius: 50px === 50px 50px 50px 50px / 50px 50px 50px 50px; */
+  border-radius: 35% 65% 69% 31% / 53% 53% 47% 47%;
+  
+  box-shadow: 
+    /* 上方内阴影 */
+    inset 10px 10px 10px rgba(0, 0, 0, 0.05), 
+    /* 下方外阴影1 */
+    15px 25px 10px rgba(0, 0, 0, 0.1),
+    /* 下方外阴影2 */
+    15px 20px 20px rgba(0, 0, 0, 0.05),
+    /* 下方内阴影 */
+    inset -10px -10px 15px rgba(255, 255, 255, 0.9)
+    ;
+}
+
+.drop::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 35px;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 34% 66% 52% 48% / 52% 55% 45% 48%;
+}
+
+.drop::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 65px;
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 36% 64% 35% 65% / 55% 45% 55% 45%;
+}
+
+.drop:nth-child(2) {
+  transform: scale(0.5) translate(-200px, 180px);
+  border-radius: 66% 34% 48% 52% / 39% 52% 48% 61%;
+}
+
+.drop:nth-child(3) {
+  transform: scale(0.5) translate(280px, 10px);
+  border-radius: 29% 71% 52% 48% / 66% 51% 49% 34%;
+}
+
+.drop:nth-child(4) {
+  transform: scale(0.5) translate(120px, -350px);
+  border-radius: 29% 71% 52% 48% / 52% 51% 49% 48%;
+}

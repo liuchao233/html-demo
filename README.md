@@ -1,6 +1,7 @@
 # html demo 合集
 
 * css-3d-layered-social-media-button css 3d 按钮特效
+* css-background-repeat background-repeat 属性demo 
 * css-bilibili-banner-autumn bilibili-2020-秋季banner 
 * css-bilibili-banner-winter bilibili-2020-冬季banner 
 * css-button-ripple 按钮水波纹效果
@@ -13,5 +14,6 @@
 * css-smoke-hover-text 文字粒子消散效果 
 * css-smoke-text 文字烟雾效果（需要视频支持）
 * css-video-in-text 在文字中看视频（ie不支持）
+* css-water-drop css 水滴效果 深度使用 border-radius 和 box-shadow，使用 https://9elements.github.io/fancy-border-radius/ 辅助设计
 * css-wave-bg 波浪效果
 * home-page 响应式网站首页
