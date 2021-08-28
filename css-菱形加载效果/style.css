@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.loader {
+  width: 10em;
+  height: 10em;
+  /* border: 1px dashed white; */
+  font-size: 25px;
+  display: grid;
+  /* fr 单位被用于在一系列长度值中分配剩余空间, 如果多个已指定了多个部分，则剩下的空间根据各自的数字按比例分配。 */
+  grid-template-columns: repeat(3, 1fr);
+  /* 设置 grid 的间距为 0.5em */
+  grid-gap: 0.5em;
+  counter-reset: number;
+  transform: rotate(45deg);
+}
+
+.loader span {
+  --c: gray;
+  background-color: var(--c);
+  position: relative;
+  animation: blinking 2s linear infinite;
+  transform: scale(0);
+  animation-delay: var(--d);
+}
+
+@keyframes blinking {
+  0%, 100% {
+    transform: scale(0);
+  }
+
+  40%, 80% {
+    transform: scale(1);
+  }
+}
+
+.loader span::before {
+  /* counter-increment 属性设置某个选取器每次出现的计数器增量。默认增量是 1。 */
+  counter-increment: number;
+  content: counter(number);
+  /* color: white; */
+  color: transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 3em;
+  transform: rotate(-45deg);
+}
+
+.loader span:nth-child(7) {
+  --c: tomato;
+  --d: 0s;
+}
+
+.loader span:nth-child(4),
+.loader span:nth-child(8) {
+  --c: gold;
+  --d: 0.2s;
+}
+
+.loader span:nth-child(1),
+.loader span:nth-child(5),
+.loader span:nth-child(9) {
+  --c: limegreen;
+  --d: 0.4s;
+}
+
+.loader span:nth-child(2),
+.loader span:nth-child(6) {
+  --c: dodgerblue ;
+  --d: 0.6s;
+}
+
+.loader span:nth-child(3) {
+  --c: mediumpurple;
+  --d: 0.8s;
+}
